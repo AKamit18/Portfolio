@@ -1,0 +1,100 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif ;
+    color: #fff;
+}
+#main{
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+
+}
+ /* Setting of navigation area  */
+#nav{
+    height:100px;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#nav img{
+    display: inline-block;
+    height: 50px;
+}
+#nav-part2{
+    display: flex;
+    gap: 55px;
+}
+#nav-part2 h3{
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+#nav-part3{
+    display: flex;
+    gap: 55px;
+    align-items: center;
+}
+#nav-part3 h4{
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+#nav-part3 button{
+    color:#000;
+    background-color: #fff;
+    padding: 10px;
+    border: none;
+}
+/* face area of home */
+ #main h1{
+    font-size: 100px;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+ }
+ #main h1 span{
+    background-color: brown;
+    font-size: 30px;
+    padding: 20px 40px;
+    margin: 0 30px;
+    border-radius: 50px;
+ }
+ /* 1st child nav 2nd child h1  */
+ #main h1:nth-child(2){
+    color: red;
+ }
+ #main #left-img{
+    position: absolute;
+    height: 150px;
+    width: 100px;
+    top: 14%;
+    left: 10%;
+    border-radius: 40px;
+    z-index: 1;
+ }
+ #main #right-img{
+
+    position: absolute;
+    height: 150px;
+    width: 100px;
+    bottom: 14%;
+    right: 10%;
+    border-radius: 40px;
+ }
+ #main>h5{
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    margin:20px;
+ }
+
