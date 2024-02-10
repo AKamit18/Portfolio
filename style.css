@@ -12,7 +12,8 @@ body{
 #main{
     height: 100vh;
     width:100%;
-    background-color: #1D1D20;
+    background-color: crimson;
+    position: relative;
 }
 #main #nav-items{
    height:100px;
@@ -30,18 +31,28 @@ body{
     align-items: center;
     justify-content: center;
     gap:20px;
-    
-    
+
 }
 
 #nav-items .right-part i{
-    
-    display:inline-block;
+    display:inline-flex;
     height:40px;
     width:40px;
     font-size: 2rem;
     color:#adadb14f;
     border-radius: 50%;
+}
+#main .loader-top{
+    position: absolute;
+    left:7%;
+    top:10%;
+    color:white;
+}
+#main .loader-top img{
+    height:400px;
+    mix-blend-mode:multiply;
+    
+    background: #000;
 }
 #main .left-part{
     height:100px;
@@ -55,7 +66,7 @@ body{
     font-size: 4rem;
 }
 #main .content-Area{
-    height:400px;
+    height:600px;
     max-width: 450px;
     position: relative;
     display: flex;
@@ -65,27 +76,104 @@ body{
     
 }
 .content-Area h1{
-    color:#fff;
-    font-weight: 100;
-    font-size: 4rem;
-    margin-bottom:10px
+    height:120px;
+    margin-bottom:10px;
+    overflow: hidden;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:0px;
+    flex-direction: row;
+    
 }
 .content-Area h1 span{
     
-    height:100px;
-    width:48px;
-    margin:0;
-    padding: 0;
-    
+    font-weight: 100;
+    color:#fff;
+    font-size: 4rem;
+
 }
 .content-Area .text-content{
-    position: absolute;
-    bottom: 0;
+   
     
+    height:480px;
+    width:100%;
+    /* display:flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start;    */
 }
 .content-Area .text-content p{
-    margin:20px 0 0;
+    margin:0 0 0;
     color: #dfd9d9;
-}
+    text-align: center;
 
+}
+#main #profile-section{
+    position: absolute;
+    top:20%;
+    right:10%;
+    display:flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    height:550px;
+    width: 450px;
+}
+#main #profile-section #photo{
+    height:140px;
+    width:100%;
+    display: flex;
+    align-items: center;
+}
+#main #profile-section #photo  img{
+    height:100px;
+    margin:0 auto;
+    border:2px solid white;
+    border-radius: 50%;
+}
+#profile-section h1{
+    color:#edeaec;
+    text-transform: uppercase;
+    font-weight: 100;
+    margin:0 0 0 20px;
+}
+#profile-section .changing{
+    display: inline-block;
+    width:100%;
+    position: relative;
+    color:#21d6eac5;
+    font-weight: 100;
+    margin: 0 0 0 20px;
+
+}
+#profile-section  .values{
+    position: absolute;
+    display: inline-flex;
+    height:100%;
+    width:75%;
+    color:#FFF;
+    font-size: 1.4rem;
+    margin:0 2px 0 10px;
+    align-items: center;
+    
+}
+#profile-section .low-vertical{
+    display: block;
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    height:10px;
+    width: 100%;
+    background-color: #fff;
+}
+#profile-section .low-horizontal{
+    display: block;
+    position: absolute;
+    bottom: 10%;
+    right: 12px;
+    height:88%;
+    width: 10px;
+    background-color: #fff;
+    border-radius: 0 20px 0 0;
+}
 
