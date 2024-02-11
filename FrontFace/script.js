@@ -3,6 +3,50 @@ const scroll = new LocomotiveScroll({
     smooth: true
 });
 
+
+let circle_9= document.querySelector("#nav-items .circle-9")
+circle_9.addEventListener("mouseover",function(){
+   
+    
+    gsap.to(".p2",{
+        height:50,
+        borderRadius:"10px 10px 10px 10px",
+    })
+    gsap.to( " #nav-items .hor",{
+        y:-20,
+        duration:0,
+        ease:"ease"
+    })
+    gsap.to( " #nav-items .hor1",{
+        width:40,
+        y:-30,
+        duration:0,
+        ease:"ease-inOut",
+        borderRadius:"10px 10px 10px 10px",
+    })
+
+})
+circle_9.addEventListener("mouseleave",function(){
+    gsap.to(".p2",{
+        height:10,
+        duration:0.9,
+        ease:"bounce-inOut",
+        borderRadius:"10px 10px 10px 10px",
+    })
+    gsap.to( " #nav-items .hor",{
+        y:0,
+        duration:0,
+        ease:"ease"
+    })
+    gsap.to( " #nav-items .hor1",{
+        width:10,
+        y:0,
+        duration:0,
+        ease:"ease-inOut",
+        borderRadius:"10px 10px 10px 10px",
+    })
+})
+
 let tl=gsap.timeline();
 gsap.from("#main",{
     backgroundColor:"black",
