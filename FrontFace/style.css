@@ -39,7 +39,7 @@ body{
     height:40px;
     width:40px;
     font-size: 2rem;
-    color:#adadb14f;
+    color:#ffffff;
     border-radius: 50%;
 }
 #main .loader-top{
@@ -114,9 +114,11 @@ body{
     top:20%;
     right:10%;
     display:flex;
+    align-items: center;
     flex-direction: column;
     /* justify-content: center; */
-    height:550px;
+    box-shadow:  10px 100px 310px #fff;
+    height:500px;
     width: 450px;
 }
 #main #profile-section #photo{
@@ -140,10 +142,11 @@ body{
 #profile-section .changing{
     display: inline-block;
     width:100%;
+    left:23%;
     position: relative;
-    color:#21d6eac5;
+    color:#0f0f0fc5;
     font-weight: 100;
-    margin: 0 0 0 20px;
+    margin: 0;
 
 }
 #profile-section  .values{
@@ -157,23 +160,44 @@ body{
     align-items: center;
     
 }
-#profile-section .low-vertical{
+/* #profile-section .low-vertical{
     display: block;
     position: absolute;
     bottom: 10%;
     right: 0;
     height:10px;
     width: 100%;
-    background-color: #fff;
+    background-color: #000;
+    
+}
+#profile-section .low-vertical .low-inner{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height:100%;
+    width: 100%;
+    z-index: 10;
+    background-color: #d5c7c7;
 }
 #profile-section .low-horizontal{
     display: block;
     position: absolute;
     bottom: 10%;
-    right: 12px;
+    right: 20px;
     height:88%;
     width: 10px;
-    background-color: #fff;
+    background-color: rgba(13, 13, 13, 0.7);
     border-radius: 0 20px 0 0;
 }
+#profile-section .low-horizontal .low-inner1{
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height:100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0 20px 0 0;
+} */
 

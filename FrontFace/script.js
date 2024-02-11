@@ -21,7 +21,7 @@ tl.from(".left-part .logo-name",{
     yoyo:true,
     onComplete:()=>changingParent.play(),
 })
-const myArr=[ " Web Developer", " Front-end specialist", " Problem solver"];
+const myArr=[ "animator", "chiller", "ui specialist"];
 let changingParent=gsap.timeline({repeat:-1})
 myArr.forEach(val=>{
     
@@ -56,51 +56,72 @@ tl.to("#nav-items .right-part i:nth-child(2)",{
     duration:0.4,
     repeat:-1,
     yoyo:true,
-    stagger:0.1
+    stagger:0.1,
+    color:"#Fff"
 })
-gsap.fromTo("#profile-section",{
-    x:200,
-    boxShadow: "10px 10px 20px rgba(0, 0, 0, 0.5)", 
-    borderRadius: 50,
+gsap.to("#profile-section",{
     
-},{
-    duration:1,
-    ease:"elastic.out(1,0.3)",
-    x:0,
-    boxShadow: "10px 10px 300px #fff",
-    borderRadius: 50,
+   duration:2,
+    borderRadius: "50%",
+    onComplete:()=>{
+        gsap.to("#profile-section",{
+            y:20,
+            repeat:-1,
+            duration:1,
+            yoyo:true,
+        })
+    }
     
 })
+// function getRandomColor() {
+//     const letters = '0123456789ABCDEF';
+//     let color = '#';
+//     for (let i = 0; i < 6; i++) {
+//       color += letters[Math.floor(Math.random() * 16)];
+//     }
+//     console.log(color)
+//     return color;
+//   }
+
+//   // GSAP animation to continuously change the background color
+//   function animateBackgroundColor() {
+//     gsap.to('.low-inner', {
+//       backgroundColor: getRandomColor(),
+//       duration: 2,
+//       width:0
+//     //   ease:
+//       onComplete: animateBackgroundColor, // Repeat the animation when it completes
+//     });
+//     gsap.to('.low-inner1', {
+//       backgroundColor: getRandomColor(),
+//       duration: 2,
+//       ease:'bounce-in',
+//       onComplete: animateBackgroundColor, // Repeat the animation when it completes
+//     });
+//   }
+
+//   // Start the animation
+//   animateBackgroundColor();
+
 gsap.from("#main #profile-section #photo  img",{
     // y:20,
     scale:1.02,
     duration: 1,
     repeat:-1,
-    opacity:0.6,
+    border:10,
     yoyo:1,
 })
-gsap.from("#main #profile-section #photo  img",{
-    border:237,
-    duration: 1,
-    
- })
+
 
 gsap.to("#main #profile-section #photo  img" ,{
     y:-20,
     scale:1,
     duration:1,
-    
-})
-gsap.to("#profile-section",{
-    boxShadow: "1px 10px 0px #444",
-    scale:1.009,
-    duration:4,
     repeat:-1,
     yoyo:true,
+    
 })
-changingParent.to("#profile-section .low-vertical",{
-    backgroundColor:"background: linear-gradient(45deg, red, blue)"
-})
+
 
 
 
