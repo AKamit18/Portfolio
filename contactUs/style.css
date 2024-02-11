@@ -42,6 +42,7 @@ section::before {
     min-width: 1100px;
     min-height: 550px;
     display: flex;
+    flex-direction: column;
     z-index: 1000;
     border-radius: 22px; 
     background-color: #fff; /* Background color */
@@ -142,14 +143,22 @@ section::before {
 /* Contact form section */
 .container .contactForm {
     position: absolute;
-    padding: 70px 50px;
-    padding-left: 250px;
+       /* older-styles */
+    /* padding: 70px 50px; */
+    /* padding-left: 250px;
     margin-left: 150px;
     width: calc(100% - 150px);
     height: 100%;
     background: #fff; 
     box-shadow: 0 50px 50px rgba(0,0,0,0.25);
-    border-radius: 22px;
+    border-radius: 22px; */
+
+    /* ----newer styles----  */
+    height:100%;
+    width:750px;
+    margin:0 20px 0 0;
+    padding:0 10px 0 40px;
+    right:0;
 }
 
 /* Heading for contact form */
