@@ -1,0 +1,72 @@
+/* Reset CSS: Resets default margin, padding, and box-sizing to ensure consistent rendering across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Styles: Setting up basic styles for the document */
+body {
+    font-family: Arial, sans-serif; /* Set default font family */
+}
+
+.container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    height: 100vh; /* Make container full height of viewport */
+    padding: 20px; /* Add padding around content */
+}
+
+.header {
+    flex: 0 0 30%; /* Set flex properties for header section */
+}
+
+.content {
+    /* flex: 0 0 65%; */
+    width: 80%; /* Set width for content section */
+}
+
+.header h1 {
+    font-size: 24px; /* Set font size for main heading */
+    margin-bottom: 10px; /* Add bottom margin to main heading */
+}
+
+.header h2 {
+    font-size: 18px; /* Set font size for subheading */
+    color: #666; /* Set text color for subheading */
+    margin-bottom: 20px; /* Add bottom margin to subheading */
+}
+
+.resume-upload {
+    margin-bottom: 20px; /* Add bottom margin to resume upload section */
+}
+
+.resume-upload input[type="file"] {
+    display: none; /* Hide file input element */
+}
+
+.resume-upload label {
+    padding: 10px 20px; /* Add padding to file upload button */
+    background-color: #007bff; /* Set background color for file upload button */
+    color: #fff; /* Set text color for file upload button */
+    cursor: pointer; /* Set cursor style to pointer */
+}
+
+.resume-preview {
+    border: 1px solid #ccc; /* Add border around resume preview */
+    padding: 10px; /* Add padding inside resume preview */
+    border: 20px; /* This line seems redundant */
+    width: 100%; /* Set width to 100% */
+}
+
+/* Responsive Styles: Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Change flex direction to column on smaller screens */
+    }
+
+    .header, .content {
+        width: 100%; /* Set width to 100% for header and content on smaller screens */
+    }
+}
