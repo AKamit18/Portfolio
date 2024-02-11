@@ -1,0 +1,162 @@
+/* Global reset for all elements */
+/* * {
+    background-color: black;
+} */
+
+/* General styling for body */
+body {
+    font-family: Arial, sans-serif; /* Setting font family */
+    margin: 10px; /* Setting margin */
+    padding: 10px; /* Setting padding */
+}
+
+/* Styling for top and bottom sections */
+#top-section, #bottom-section {
+    display: flex; /* Display as flex container */
+    justify-content: space-around; /* Horizontally space items */
+    align-items: center; /* Center items vertically */
+    overflow: hidden; /* Hide overflowing content */
+    border-radius: 10px; /* Rounded corners */
+    background-color: black; /* Background color */
+}
+
+/* Styling for top section */
+#top-section {
+    height: 300px; /* Setting height */
+    margin: 10px; /* Setting margin */
+    padding: 10px; /* Setting padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Styling for bottom section */
+#bottom-section {
+    height: 500px; /* Setting height */
+    margin: 10px; /* Setting margin */
+    padding: 10px; /* Setting padding */
+}
+
+/* Styling for containers of skills and projects */
+.skill-container, .project-container {
+    display: flex; /* Display as flex container */
+    position: relative; /* Required for absolute positioning of buttons */
+    flex-wrap: nowrap; /* Prevent wrapping of items */
+    /* animation: slideSkill 15s infinite linear; */
+}
+
+/* Animation for sliding skills */
+.skill-container {
+    animation: slideSkill 15s infinite linear; /* Applying animation */
+}
+
+/* Styling for individual skill and project boxes */
+.skill-box, .project-box {
+    width: 250px; /* Setting width */
+    height: 250px; /* Setting height */
+    margin: 10px; /* Setting margin */
+    padding: 10px; /* Setting padding */
+    display: flex; /* Display as flex container */
+    flex-direction: column; /* Stack buttons below text */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    color: white; /* Text color */
+    font-weight: bold; /* Bold text */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+    position: relative; /* Positioning context for absolute children */
+}
+
+/* Transition for skill box */
+.skill-box {
+    transition: transform 0.01s ease-in-out; /* Smooth transition */
+}
+
+/* Styling for background images */
+.skill-box, .project-box {
+    /* background-image: url('/skillAndResume/example.png'); Replace 'example.png' with the path to your image */
+    background-size: cover; /* Ensure the image covers the entire box */
+    background-position: center; /* Center the image within the box */
+}
+
+/* Keyframes for sliding skills */
+@keyframes slideSkill {
+    0% {
+        transform: translateX(0); /* Initial position */
+    }
+    100% {
+        transform: translateX(calc(-100% + 20px)); /* Final position */
+    }
+}
+
+/* Transition for project box */
+#bottom-section .project-box {
+    transition: transform 0.01s ease; /* Smooth transition */
+}
+
+/* Styling for button containers */
+.button-container {
+    display: flex; /* Display as flex container */
+    justify-content: space-between; /* Align buttons at ends */
+    width: 100%; /* Ensure buttons take full width */
+    position: absolute; /* Positioning context for absolute children */
+    bottom: 20px; /* Position buttons at the bottom of the box */
+    /* padding: 5px; Add some padding */
+}
+
+/* Styling for buttons within each box */
+.button-left, .button-right {
+    padding: 8px 15px; /* Setting padding */
+    background-color: #3498db; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s; /* Smooth transition */
+    margin: 5px; /* Setting margin */
+}
+
+/* Hover effect for buttons */
+.button-left:hover, .button-right:hover {
+    background-color: #2980b9; /* Darker background color on hover */
+}
+
+/* Styling for floating navigation buttons */
+.nav-button {
+    position: fixed; /* Fixed positioning */
+    bottom: 50%; /* Position at 50% from top */
+    transform: translateY(-50%); /* Center vertically */
+    width: 40px; /* Setting width */
+    height: 40px; /* Setting height */
+    border: none; /* Remove border */
+    border-radius: 50%; /* Circle shape */
+    background-color: rgba(0, 0, 0, 0.5); /* Button background color */
+    color: #fff; /* Button text color */
+    font-size: 18px; /* Font size */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s; /* Smooth transition */
+    z-index: 1; /* Ensure on top of other elements */
+}
+
+/* Hover effect for navigation buttons */
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background color on hover */
+}
+
+/* Positioning for left navigation button */
+.left {
+    left: 10px; /* Position at 10px from left */
+}
+
+/* Positioning for right navigation button */
+.right {
+    right: 10px; /* Position at 10px from right */
+}
+
+/* Positioning for central navigation button */
+.central {
+    left: 50%; /* Position at 50% from left */
+    transform: translateX(-50%); /* Center horizontally */
+    background-color: #3498db; /* Button background color */
+    color: #fff; /* Button text color */
+    font-size: 18px; /* Font size */
+    border: none; /* Remove border */
+}
