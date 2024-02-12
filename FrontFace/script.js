@@ -54,7 +54,7 @@ circle_9.addEventListener("mouseleave",function(){
         x:0,
        })
        gsap.to(".circle-9",{
-        rotate:180,
+        rotate:0,
        })
        gsap.to("#nav-items .circle-9 .hor",{
         width:10,
