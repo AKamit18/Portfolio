@@ -2,52 +2,75 @@ const scroll = new LocomotiveScroll({
     el: document.querySelector('#page1'),
     smooth: true
 });
-
+let tl=gsap.timeline();
 
 let circle_9= document.querySelector("#nav-items .circle-9")
 circle_9.addEventListener("mouseover",function(){
    
+   gsap.to(".p2",{
+    y:-20,
+   })
+   gsap.to(".p4",{
+    x:-20,
+   })
+   gsap.to(".p8",{
+    y:20,
+   })
+   gsap.to(".p6",{
+    x:20,
+   })
+   gsap.to(".circle-9",{
+    rotate:180,
+   })
+   gsap.to("#nav-items .circle-9 .hor",{
+    x:-17,
+    width:40,
     
-    gsap.to(".p2",{
-        height:50,
-        borderRadius:"10px 10px 10px 10px",
-    })
-    gsap.to( " #nav-items .hor",{
-        y:-20,
-        duration:0,
-        ease:"ease"
-    })
-    gsap.to( " #nav-items .hor1",{
-        width:40,
-        y:-30,
-        duration:0,
-        ease:"ease-inOut",
-        borderRadius:"10px 10px 10px 10px",
-    })
+    borderRadius:"10px 10px 10px 10px"
+   })
+  
+   gsap.to("#nav-items .circle-9 .hor .ver",{
+    
+    height:40,
+    width:10,
+    border:"2px solid #000",
+    borderRadius:"10px 10px 10px 10px"
+   })
+  
 
+      
 })
 circle_9.addEventListener("mouseleave",function(){
     gsap.to(".p2",{
-        height:10,
-        duration:0.9,
-        ease:"bounce-inOut",
-        borderRadius:"10px 10px 10px 10px",
-    })
-    gsap.to( " #nav-items .hor",{
         y:0,
-        duration:0,
-        ease:"ease"
-    })
-    gsap.to( " #nav-items .hor1",{
+       })
+       gsap.to(".p4",{
+        x:0,
+       })
+       gsap.to(".p8",{
+        y:0,
+       })
+       gsap.to(".p6",{
+        x:0,
+       })
+       gsap.to(".circle-9",{
+        rotate:180,
+       })
+       gsap.to("#nav-items .circle-9 .hor",{
         width:10,
-        y:0,
-        duration:0,
-        ease:"ease-inOut",
-        borderRadius:"10px 10px 10px 10px",
-    })
+        x:0,
+        borderRadius:"10px 10px 10px 10px"
+       })
+      
+       gsap.to("#nav-items .circle-9 .hor .ver",{
+        height:10,
+        border:"2px solid #000",
+        borderRadius:"10px 10px 10px 10px"
+       })
 })
 
-let tl=gsap.timeline();
+
+
 gsap.from("#main",{
     backgroundColor:"black",
     duration:1,
