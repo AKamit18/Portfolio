@@ -1,12 +1,19 @@
+// for smooth Scrolling
 const scroll = new LocomotiveScroll({
     el: document.querySelector('#page1'),
     smooth: true
 });
+
 let tl=gsap.timeline();
 
+// targeting 9 element
 let circle_9= document.querySelector("#nav-items .circle-9")
 circle_9.addEventListener("mouseover",function(){
    
+    // functions of 9Element of plus +
+    if(circle_9.classList.contains("crossFlag")==false){
+
+    
    gsap.to(".p2",{
     y:-20,
    })
@@ -37,10 +44,50 @@ circle_9.addEventListener("mouseover",function(){
     borderRadius:"10px 10px 10px 10px"
    })
   
-
+    }
       
 })
-circle_9.addEventListener("mouseleave",function(){
+circle_9.addEventListener("click",function(){
+   
+    // functions of 9Element of plus +
+    circle_9.classList.toggle("crossFlag")
+    if(circle_9.classList.contains("crossFlag")){
+   gsap.to(".p2",{
+    y:-20,
+   })
+   gsap.to(".p4",{
+    x:-20,
+   })
+   gsap.to(".p8",{
+    y:20,
+   })
+   gsap.to(".p6",{
+    x:20,
+   })
+   gsap.to(".circle-9",{
+    rotate:500,
+    ease:"bounce-inOut",
+    duration:2,
+   })
+   gsap.to("#nav-items .circle-9 .hor",{
+    x:-17,
+    width:40,
+    
+    borderRadius:"10px 10px 10px 10px"
+   })
+  
+   gsap.to("#nav-items .circle-9 .hor .ver",{
+    
+    height:40,
+    width:10,
+    border:"2px solid black",
+    borderRadius:"10px 10px 10px 10px"
+   })
+   gsap.to("#aboutUs",{
+    x:"-100vw"
+   })
+}
+else{
     gsap.to(".p2",{
         y:0,
        })
@@ -67,27 +114,76 @@ circle_9.addEventListener("mouseleave",function(){
         border:"2px solid #000",
         borderRadius:"10px 10px 10px 10px"
        })
+       gsap.to("#aboutUs",{
+        x:"100vw"
+       })
+}
+
+      
+},true)
+
+
+circle_9.addEventListener("mouseleave",function(){
+    //function of getting in the inital position for the 9 Element
+    if(circle_9.classList.contains("crossFlag")==false){
+    gsap.to(".p2",{
+        y:0,
+       })
+       gsap.to(".p4",{
+        x:0,
+       })
+       gsap.to(".p8",{
+        y:0,
+       })
+       gsap.to(".p6",{
+        x:0,
+       })
+       gsap.to(".circle-9",{
+        rotate:0,
+       })
+       gsap.to("#nav-items .circle-9 .hor",{
+        width:10,
+        x:0,
+        borderRadius:"10px 10px 10px 10px"
+       })
+      
+       gsap.to("#nav-items .circle-9 .hor .ver",{
+        height:10,
+        border:"2px solid #000",
+        borderRadius:"10px 10px 10px 10px"
+       })
+    }
 })
 
 
 
+//animation for the main page to 
+// blink in the beginning
 gsap.from("#main",{
     backgroundColor:"black",
     duration:1,
 })
-tl.from(".left-part .logo-name",{
+
+//logo-Name bouncing Animation
+tl.fromTo(".left-part .logo-name",{
     x:-100,
-    duration:1,
     opacity:0,
     scale:0,
-})
-tl.from(".left-part .logo-name",{
-    y:-6,
-    durtion:1.3,
-    repeat:-1,
     yoyo:true,
+    y:-6,
+    durtion:5,
+   
     onComplete:()=>changingParent.play(),
+},{
+     x:-100,
+    opacity:0,
+    scale:0,
+    yoyo:true,
+    y:-6,
+    durtion:5,
 })
+
+//function of Text Updater- rightPart 
 const myArr=[ "animator", "chiller", "ui specialist"];
 let changingParent=gsap.timeline({repeat:-1})
 myArr.forEach(val=>{
@@ -107,6 +203,10 @@ myArr.forEach(val=>{
  changingParent.add(changingChild)
  
 })
+
+
+
+// nav items section
 tl.from("#nav-items .right-part i",{
     opacity:0,
     y:-100,
@@ -126,6 +226,8 @@ tl.to("#nav-items .right-part i:nth-child(2)",{
     stagger:0.1,
     color:"#Fff"
 })
+
+// right part profile area
 gsap.to("#profile-section",{
     
    duration:2,
@@ -170,17 +272,15 @@ gsap.to("#profile-section",{
 //   // Start the animation
 //   animateBackgroundColor();
 
+// profile image Animation;
 gsap.from("#main #profile-section #photo  img",{
-    // y:20,
+    y:20,
     scale:1.02,
     duration: 1,
     repeat:-1,
     border:10,
-    yoyo:1,
-})
-
-
-gsap.to("#main #profile-section #photo  img" ,{
+    yoyo:true,
+},{
     y:-20,
     scale:1,
     duration:1,
@@ -193,7 +293,7 @@ gsap.to("#main #profile-section #photo  img" ,{
 
 
 
-
+// Welcome and the text area
 
 gsap.from(".content-Area h1 span:nth-child(1) ",{
     y:-200,
@@ -207,15 +307,41 @@ gsap.from(".content-Area h1 span:nth-child(1) ",{
     stagger:0.1,
  })
  gsap.from(".content-Area .text-content p",{
-    
+    x:-200,
     stagger:0.2,
     opacity:0,
     scale:0,
  })
  
 
+ 
 
-    
+    // About us section 
+
+
+
+
+    let blockArr=document.querySelectorAll("#aboutUs .about-gridContainer>div");
+    blockArr.forEach((block)=>{
+        block.addEventListener("mouseover",()=>{
+          let seenElement=block.querySelector(".svg-containerClass svg ")
+         
+          gsap.to(seenElement,{
+              opacity:1,
+              
+          },)
+        })
+        block.addEventListener("mouseleave",()=>{
+          let seenElement=block.querySelector(".svg-containerClass svg")
+          
+          gsap.to(seenElement,{
+            opacity:0,
+        })
+        })
+    })
+
+
+
 
 
 
